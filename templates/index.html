@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Current mood: {% endblock %}</h1>
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange" color="red">
+        <p>Need to get value from user to set mood</p>
+        <p><span id="demo"></span></p>
+      </div>
+    <blockquote class=".blockquote-reverse">
+        <p>You need to...</p>
+    </blockquote>
+    <p></p>
+    <h3>Meal History:</h3>
+    {% for post in posts %}
+    <a href="{{ url_for('post', post_id=post['id']) }}">
+        <h2>{{ post['title'] }}</h2>
+    </a>
+    <span class="badge badge-primary">{{ post['created'] }}</span>
+    <a href="{{ url_for('edit', id=post['id']) }}">
+        <span class="badge badge-warning">Edit</span>
+    </a>
+    <hr>
+{% endfor %}
+<script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+    
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+    }
+    </script>
+
+{% endblock %}

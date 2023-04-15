@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MoodMunch</title>
+  </head>
+  <body>
+    {% extends "base.html" %}
+    {% block content %}
+
+    <h1>We built this as a project for the 5C Hackathon! </h1>
+    <a class="navbar-brand" href="https://5chack.com/"><img src="static/5CHackathon-OnePager.png" alt="Flyer" height="500" width="350"></a>
+    <p><a href="5chack.com">Click Here to Learn More!</a></p>
+    
+    <h1>Reference Data</h1>
+    <p> We used the study from PCOS to create and implement our model </p>
+
+    <h1>Dataset:</h1>
+    <p> Citation: Swami V, Hochstöger S, Kargl E, Stieger S (2022) Hangry in the field: 
+      An experience sampling study on the impact of hunger on anger, irritability, and affect. 
+      PLoS ONE 17(7): e0269629. https://doi.org/10.1371/journal.pone.0269629</p>
+    <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0269629">Data Source</a>
+      
+    {% endblock %}
+  </body>
+</html>
